@@ -1,5 +1,5 @@
 //
-//  FilterItem.h
+//  XHFilterItem.h
 //  XHFilterCamera
 //
 //  Created by CraneTeng on 16/9/24.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FilterItem : NSObject
+@interface XHFilterItem : NSObject
 @property (nonatomic,assign)int category;
 @property (nonatomic,copy)NSString *title;
 @property (nonatomic,copy)NSString *lookupImageName;

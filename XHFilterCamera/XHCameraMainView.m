@@ -7,7 +7,7 @@
 //
 
 #import "XHCameraMainView.h"
-#import "common.h"
+#import "XHFilterCommon.h"
 
 @interface XHCameraMainView()
 

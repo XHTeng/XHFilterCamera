@@ -19,12 +19,12 @@
 		E666068E1D9680B300A88591 /* XHCameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E666068D1D9680B300A88591 /* XHCameraManager.m */; };
 		E66606941D96822800A88591 /* XHCameraMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66606931D96822800A88591 /* XHCameraMainView.m */; };
 		E66606981D96896E00A88591 /* XHCameraFilterCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66606971D96896E00A88591 /* XHCameraFilterCollectionView.m */; };
-		E666069B1D96984D00A88591 /* GPUImageCustomLookupFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E666069A1D96984D00A88591 /* GPUImageCustomLookupFilter.m */; };
-		E666069E1D9699C700A88591 /* FilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E666069D1D9699C700A88591 /* FilterModel.m */; };
-		E66606A11D969B3700A88591 /* FilterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E66606A01D969B3700A88591 /* FilterItem.m */; };
-		E66606A41D969F2F00A88591 /* GestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66606A31D969F2F00A88591 /* GestureView.m */; };
+		E666069B1D96984D00A88591 /* XHCustomLookupFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E666069A1D96984D00A88591 /* XHCustomLookupFilter.m */; };
+		E666069E1D9699C700A88591 /* XHFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E666069D1D9699C700A88591 /* XHFilterModel.m */; };
+		E66606A11D969B3700A88591 /* XHFilterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E66606A01D969B3700A88591 /* XHFilterItem.m */; };
+		E66606A41D969F2F00A88591 /* XHGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66606A31D969F2F00A88591 /* XHGestureView.m */; };
 		E66606A71D96B33C00A88591 /* XHCameraFilterCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E66606A61D96B33C00A88591 /* XHCameraFilterCollectionCell.m */; };
-		E66606AA1D96BEC000A88591 /* NotifyAnimateView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66606A91D96BEC000A88591 /* NotifyAnimateView.m */; };
+		E66606AA1D96BEC000A88591 /* XHNotifyAnimateView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66606A91D96BEC000A88591 /* XHNotifyAnimateView.m */; };
 		E66606AD1D9785DE00A88591 /* XHFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E66606AC1D9785DE00A88591 /* XHFilterViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -64,26 +64,25 @@
 		E666063F1D94C9A500A88591 /* XHFilterCameraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XHFilterCameraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66606431D94C9A500A88591 /* XHFilterCameraUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHFilterCameraUITests.m; sourceTree = "<group>"; };
 		E66606451D94C9A500A88591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E66606671D953A4700A88591 /* XHFilterCamera-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XHFilterCamera-Bridging-Header.h"; sourceTree = "<group>"; };
 		E666068C1D9680B300A88591 /* XHCameraManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCameraManager.h; sourceTree = "<group>"; };
 		E666068D1D9680B300A88591 /* XHCameraManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCameraManager.m; sourceTree = "<group>"; };
 		E66606921D96822800A88591 /* XHCameraMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCameraMainView.h; sourceTree = "<group>"; };
 		E66606931D96822800A88591 /* XHCameraMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCameraMainView.m; sourceTree = "<group>"; };
-		E66606951D96840000A88591 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		E66606951D96840000A88591 /* XHFilterCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHFilterCommon.h; sourceTree = "<group>"; };
 		E66606961D96896E00A88591 /* XHCameraFilterCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCameraFilterCollectionView.h; sourceTree = "<group>"; };
 		E66606971D96896E00A88591 /* XHCameraFilterCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCameraFilterCollectionView.m; sourceTree = "<group>"; };
-		E66606991D96984D00A88591 /* GPUImageCustomLookupFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageCustomLookupFilter.h; sourceTree = "<group>"; };
-		E666069A1D96984D00A88591 /* GPUImageCustomLookupFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageCustomLookupFilter.m; sourceTree = "<group>"; };
-		E666069C1D9699C700A88591 /* FilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterModel.h; sourceTree = "<group>"; };
-		E666069D1D9699C700A88591 /* FilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterModel.m; sourceTree = "<group>"; };
-		E666069F1D969B3700A88591 /* FilterItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterItem.h; sourceTree = "<group>"; };
-		E66606A01D969B3700A88591 /* FilterItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterItem.m; sourceTree = "<group>"; };
-		E66606A21D969F2F00A88591 /* GestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureView.h; sourceTree = "<group>"; };
-		E66606A31D969F2F00A88591 /* GestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureView.m; sourceTree = "<group>"; };
+		E66606991D96984D00A88591 /* XHCustomLookupFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCustomLookupFilter.h; sourceTree = "<group>"; };
+		E666069A1D96984D00A88591 /* XHCustomLookupFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCustomLookupFilter.m; sourceTree = "<group>"; };
+		E666069C1D9699C700A88591 /* XHFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHFilterModel.h; sourceTree = "<group>"; };
+		E666069D1D9699C700A88591 /* XHFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHFilterModel.m; sourceTree = "<group>"; };
+		E666069F1D969B3700A88591 /* XHFilterItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHFilterItem.h; sourceTree = "<group>"; };
+		E66606A01D969B3700A88591 /* XHFilterItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHFilterItem.m; sourceTree = "<group>"; };
+		E66606A21D969F2F00A88591 /* XHGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHGestureView.h; sourceTree = "<group>"; };
+		E66606A31D969F2F00A88591 /* XHGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHGestureView.m; sourceTree = "<group>"; };
 		E66606A51D96B33C00A88591 /* XHCameraFilterCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCameraFilterCollectionCell.h; sourceTree = "<group>"; };
 		E66606A61D96B33C00A88591 /* XHCameraFilterCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCameraFilterCollectionCell.m; sourceTree = "<group>"; };
-		E66606A81D96BEC000A88591 /* NotifyAnimateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifyAnimateView.h; sourceTree = "<group>"; };
-		E66606A91D96BEC000A88591 /* NotifyAnimateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifyAnimateView.m; sourceTree = "<group>"; };
+		E66606A81D96BEC000A88591 /* XHNotifyAnimateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHNotifyAnimateView.h; sourceTree = "<group>"; };
+		E66606A91D96BEC000A88591 /* XHNotifyAnimateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHNotifyAnimateView.m; sourceTree = "<group>"; };
 		E66606AB1D9785DE00A88591 /* XHFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHFilterViewController.h; sourceTree = "<group>"; };
 		E66606AC1D9785DE00A88591 /* XHFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHFilterViewController.m; sourceTree = "<group>"; };
 		E7457EF713ED6A3007C40C96 /* Pods-XHFilterCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHFilterCamera.release.xcconfig"; path = "Pods/Target Support Files/Pods-XHFilterCamera/Pods-XHFilterCamera.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,23 +170,22 @@
 				E66606971D96896E00A88591 /* XHCameraFilterCollectionView.m */,
 				E66606A51D96B33C00A88591 /* XHCameraFilterCollectionCell.h */,
 				E66606A61D96B33C00A88591 /* XHCameraFilterCollectionCell.m */,
-				E66606991D96984D00A88591 /* GPUImageCustomLookupFilter.h */,
-				E666069A1D96984D00A88591 /* GPUImageCustomLookupFilter.m */,
-				E66606A21D969F2F00A88591 /* GestureView.h */,
-				E66606A31D969F2F00A88591 /* GestureView.m */,
-				E66606A81D96BEC000A88591 /* NotifyAnimateView.h */,
-				E66606A91D96BEC000A88591 /* NotifyAnimateView.m */,
-				E666069C1D9699C700A88591 /* FilterModel.h */,
-				E666069D1D9699C700A88591 /* FilterModel.m */,
-				E666069F1D969B3700A88591 /* FilterItem.h */,
-				E66606A01D969B3700A88591 /* FilterItem.m */,
-				E66606951D96840000A88591 /* common.h */,
+				E66606991D96984D00A88591 /* XHCustomLookupFilter.h */,
+				E666069A1D96984D00A88591 /* XHCustomLookupFilter.m */,
+				E66606A21D969F2F00A88591 /* XHGestureView.h */,
+				E66606A31D969F2F00A88591 /* XHGestureView.m */,
+				E66606A81D96BEC000A88591 /* XHNotifyAnimateView.h */,
+				E66606A91D96BEC000A88591 /* XHNotifyAnimateView.m */,
+				E666069C1D9699C700A88591 /* XHFilterModel.h */,
+				E666069D1D9699C700A88591 /* XHFilterModel.m */,
+				E666069F1D969B3700A88591 /* XHFilterItem.h */,
+				E66606A01D969B3700A88591 /* XHFilterItem.m */,
+				E66606951D96840000A88591 /* XHFilterCommon.h */,
 				E66606271D94C9A500A88591 /* Main.storyboard */,
 				E666062A1D94C9A500A88591 /* Assets.xcassets */,
 				E666062C1D94C9A500A88591 /* LaunchScreen.storyboard */,
 				E666062F1D94C9A500A88591 /* Info.plist */,
 				E666061E1D94C9A500A88591 /* Supporting Files */,
-				E66606671D953A4700A88591 /* XHFilterCamera-Bridging-Header.h */,
 			);
 			path = XHFilterCamera;
 			sourceTree = "<group>";
@@ -401,12 +399,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E66606A71D96B33C00A88591 /* XHCameraFilterCollectionCell.m in Sources */,
-				E666069E1D9699C700A88591 /* FilterModel.m in Sources */,
-				E66606A41D969F2F00A88591 /* GestureView.m in Sources */,
+				E666069E1D9699C700A88591 /* XHFilterModel.m in Sources */,
+				E66606A41D969F2F00A88591 /* XHGestureView.m in Sources */,
 				E666068E1D9680B300A88591 /* XHCameraManager.m in Sources */,
-				E66606A11D969B3700A88591 /* FilterItem.m in Sources */,
-				E666069B1D96984D00A88591 /* GPUImageCustomLookupFilter.m in Sources */,
-				E66606AA1D96BEC000A88591 /* NotifyAnimateView.m in Sources */,
+				E66606A11D969B3700A88591 /* XHFilterItem.m in Sources */,
+				E666069B1D96984D00A88591 /* XHCustomLookupFilter.m in Sources */,
+				E66606AA1D96BEC000A88591 /* XHNotifyAnimateView.m in Sources */,
 				E66606261D94C9A500A88591 /* ViewController.m in Sources */,
 				E66606AD1D9785DE00A88591 /* XHFilterViewController.m in Sources */,
 				E66606231D94C9A500A88591 /* AppDelegate.m in Sources */,

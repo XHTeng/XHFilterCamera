@@ -1,14 +1,14 @@
 //
-//  GestureView.m
+//  XHGestureView.m
 //  XHFilterCamera
 //
 //  Created by CraneTeng on 16/9/24.
 //  Copyright © 2016年 CraneTeng. All rights reserved.
 //
 
-#import "GestureView.h"
+#import "XHGestureView.h"
 
-@implementation GestureView
+@implementation XHGestureView
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {

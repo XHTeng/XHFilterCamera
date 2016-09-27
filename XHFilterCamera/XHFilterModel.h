@@ -1,5 +1,5 @@
 //
-//  FilterModel.h
+//  XHFilterModel.h
 //  XHFilterCamera
 //
 //  Created by CraneTeng on 16/9/24.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FilterModel : NSObject
+@interface XHFilterModel : NSObject
 + (instancetype)sharedFilterModel;
 @property (nonatomic,strong)NSMutableArray *filterList;
 @end

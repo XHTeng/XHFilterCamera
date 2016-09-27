@@ -1,5 +1,5 @@
 //
-//  GestureView.h
+//  XHGestureView.h
 //  XHFilterCamera
 //
 //  Created by CraneTeng on 16/9/24.
@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class GestureView;
+@class XHGestureView;
 @protocol GestureViewControl <NSObject>
 
 - (void)leftSwipe;
@@ -15,6 +15,6 @@
 
 @end
 
-@interface GestureView : UIView<UIGestureRecognizerDelegate>
+@interface XHGestureView : UIView<UIGestureRecognizerDelegate>
 @property (nonatomic,weak)id<GestureViewControl> gestureControl;
 @end

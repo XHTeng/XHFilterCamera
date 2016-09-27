@@ -1,15 +1,15 @@
 //
-//  NotifyAnimateView.m
+//  XHNotifyAnimateView.m
 //  XHFilterCamera
 //
 //  Created by CraneTeng on 16/9/24.
 //  Copyright © 2016年 CraneTeng. All rights reserved.
 //
 
-#import "NotifyAnimateView.h"
-#import "common.h"
+#import "XHNotifyAnimateView.h"
+#import "XHFilterCommon.h"
 
-@interface NotifyAnimateView()
+@interface XHNotifyAnimateView()
 
 @property (nonatomic,strong)UILabel *label;
 @property (nonatomic,assign)CGFloat labelWidth;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation NotifyAnimateView
+@implementation XHNotifyAnimateView
 
 static id instance;
 + (instancetype)allocWithZone:(struct _NSZone *)zone {

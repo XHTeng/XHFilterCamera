@@ -1,5 +1,5 @@
 //
-//  NotifyAnimateView.h
+//  XHNotifyAnimateView.h
 //  XHFilterCamera
 //
 //  Created by CraneTeng on 16/9/24.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface NotifyAnimateView : NSObject
+@interface XHNotifyAnimateView : NSObject
 + (instancetype)sharedNotifyAnimateView;
 - (void)showNotify:(NSString *)string;
 @end

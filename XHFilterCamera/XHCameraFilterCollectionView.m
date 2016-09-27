@@ -8,13 +8,13 @@
 
 #import "XHCameraFilterCollectionView.h"
 #import "XHCameraFilterCollectionCell.h"
-#import "FilterModel.h"
-#import "FilterItem.h"
-#import "NotifyAnimateView.h"
+#import "XHFilterModel.h"
+#import "XHFilterItem.h"
+#import "XHNotifyAnimateView.h"
 
 @interface XHCameraFilterCollectionView()
 
-@property (nonatomic,strong)FilterModel *filterModel;
+@property (nonatomic,strong)XHFilterModel *filterModel;
 @property (nonatomic,strong)NSMutableArray *picNameArray;
 @property (nonatomic,strong)NSIndexPath *currentIndexPath;
 
@@ -57,7 +57,7 @@
     
     // 设置item图片，不能去掉，因为要取出名字显示顶部
     cell.filterImageView.image = [UIImage imageNamed:imgName];
-    FilterItem *filterItem = (FilterItem *)self.filterModel.filterList[indexPath.row];
+    XHFilterItem *filterItem = (XHFilterItem *)self.filterModel.filterList[indexPath.row];
     cell.filterLabel.text = filterItem.title;
     cell.layer.borderWidth = 0;
     
@@ -80,8 +80,8 @@
         needScrollToCenterIndexPath = visiblePathArray[1];
         [self scrollToItemAtIndexPath:needScrollToCenterIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
     }
-    NotifyAnimateView *notifyAnimate = [NotifyAnimateView sharedNotifyAnimateView];
-    FilterItem *filterItem = (FilterItem *)self.filterModel.filterList[indexPath.row];
+    XHNotifyAnimateView *notifyAnimate = [XHNotifyAnimateView sharedNotifyAnimateView];
+    XHFilterItem *filterItem = (XHFilterItem *)self.filterModel.filterList[indexPath.row];
     [notifyAnimate showNotify:filterItem.title];
     if ([self.filterCollectionDelegate respondsToSelector:@selector(switchFilter:)]) {
         [self.filterCollectionDelegate switchFilter:(int)indexPath.row];
@@ -99,10 +99,10 @@
 
 
 - (void)config {
-    self.filterModel = [FilterModel sharedFilterModel];
+    self.filterModel = [XHFilterModel sharedFilterModel];
     self.picNameArray = [NSMutableArray arrayWithCapacity:self.filterModel.filterList.count];
     for (int index = 0; index < self.filterModel.filterList.count; index++) {
-        FilterItem * filterItem = (FilterItem *)self.filterModel.filterList[index];
+        XHFilterItem * filterItem = (XHFilterItem *)self.filterModel.filterList[index];
         [self.picNameArray addObject:filterItem.imageTilte];
     }
     self.delegate = self;

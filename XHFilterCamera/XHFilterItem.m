@@ -1,19 +1,19 @@
 //
-//  FilterItem.m
+//  XHFilterItem.m
 //  XHFilterCamera
 //
 //  Created by CraneTeng on 16/9/24.
 //  Copyright © 2016年 CraneTeng. All rights reserved.
 //
 
-#import "FilterItem.h"
+#import "XHFilterItem.h"
 
-@interface FilterItem()
+@interface XHFilterItem()
 
 
 @end
 
-@implementation FilterItem
+@implementation XHFilterItem
 - (instancetype)initWithCategory:(int)category title:(NSString *)title imageTitle:(NSString *)imageTitle lookupImageName:(NSString *)lookupImageName {
     self = [super init];
     if (self) {

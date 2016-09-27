@@ -9,11 +9,11 @@
 #import "XHFilterViewController.h"
 #import "XHCameraManager.h"
 #import "XHCameraMainView.h"
-#import "GPUImageCustomLookupFilter.h"
-#import "FilterModel.h"
-#import "GestureView.h"
-#import "common.h"
-#import "FilterItem.h"
+#import "XHCustomLookupFilter.h"
+#import "XHFilterModel.h"
+#import "XHGestureView.h"
+#import "XHFilterCommon.h"
+#import "XHFilterItem.h"
 
 @interface XHFilterViewController()<XHCameraFilterDelegate,XHCameraMainViewDelegate,GestureViewControl>
 
@@ -21,16 +21,14 @@
 @property (nonatomic,strong)GPUImageView *gpuImageView;
 @property (nonatomic,strong)XHCameraMainView *cameraView;
 @property (nonatomic,assign)int currentFilterIndex;
-@property (nonatomic,strong)GPUImageCustomLookupFilter *lookupFilter;
-@property (nonatomic,strong)FilterModel *filterModel;
+@property (nonatomic,strong)XHCustomLookupFilter *lookupFilter;
+@property (nonatomic,strong)XHFilterModel *filterModel;
 // 存放拍完照的相片，用于左下角显示
 @property (nonatomic,strong)NSArray *photoArray;
-@property (nonatomic,strong)GestureView *gestureView;
+@property (nonatomic,strong)XHGestureView *gestureView;
 
 // 剪裁滤镜
 @property (nonatomic,strong)GPUImageCropFilter *cropFilter;
-// 组合滤镜（组合剪裁滤镜和lookup滤镜）
-@property (nonatomic,strong)GPUImageFilterGroup *groupFilter;
 @end
 
 @implementation XHFilterViewController
@@ -44,7 +42,6 @@
         
         // 设置默认原图
         [self.cameraManager addTarget:self.cropFilter];
-        [self.cropFilter addTarget:self.gpuImageView];
     }
     return _cameraManager;
 }
@@ -66,17 +63,17 @@
     return _cameraView;
 }
 
-- (FilterModel *)filterModel {
+- (XHFilterModel *)filterModel {
     if (_filterModel == nil) {
-        _filterModel = [FilterModel sharedFilterModel];
+        _filterModel = [XHFilterModel sharedFilterModel];
     }
     return _filterModel;
 }
 
-- (GestureView *)gestureView {
+- (XHGestureView *)gestureView {
     if (_gestureView == nil) {
         CGFloat height = kCameraBottomHeight;
-        _gestureView = [[GestureView alloc]initWithFrame:CGRectMake(0, kTopViewHeight, kScreenWidth, kScreenHeight - kTopViewHeight - height - kCameraFilterHeight)];
+        _gestureView = [[XHGestureView alloc]initWithFrame:CGRectMake(0, kTopViewHeight, kScreenWidth, kScreenHeight - kTopViewHeight - height - kCameraFilterHeight)];
     }
     return _gestureView;
 }
@@ -87,6 +84,7 @@
         _cropFilter = [[GPUImageCropFilter alloc]init];
         // 设置剪裁大小，从哪个比例点开始剪裁多大比例
         _cropFilter.cropRegion = CGRectMake(0,0.1,1,0.75);
+        [_cropFilter addTarget:self.gpuImageView];
     }
     return _cropFilter;
 }
@@ -122,28 +120,20 @@
 - (void)switchFilter:(int)index {
     // 清空之前的滤镜
     [self.cropFilter removeAllTargets];
-    [self.groupFilter removeAllTargets];
     [self.lookupFilter removeAllTargets];
     [self.cameraManager removeAllTargets];
     self.currentFilterIndex = index;
 
     // 重新设置滤镜
-    FilterItem *filterItem = self.filterModel.filterList[index];
+    XHFilterItem *filterItem = self.filterModel.filterList[index];
     NSString *lookupImageName = filterItem.lookupImageName;
     
-    self.lookupFilter = [[GPUImageCustomLookupFilter alloc]initWithLookupImageName:lookupImageName];
-    [self setUpGroupFilters:self.lookupFilter];
-    [self.cameraManager addTarget:self.groupFilter];
-    [self.groupFilter addTarget:self.gpuImageView];
+    self.lookupFilter = [[XHCustomLookupFilter alloc]initWithLookupImageName:lookupImageName];
+    [self.cropFilter addTarget:self.lookupFilter];
+    [self.cameraManager addTarget:self.cropFilter];
+    [self.lookupFilter addTarget:self.gpuImageView];
 }
 
-- (void)setUpGroupFilters:(GPUImageCustomLookupFilter *)lookupFilter {
-    self.groupFilter = [[GPUImageFilterGroup alloc]init];
-    [self.groupFilter addTarget:self.cropFilter];
-    [self.cropFilter addTarget:lookupFilter];
-    self.groupFilter.initialFilters = @[self.cropFilter];
-    self.groupFilter.terminalFilter = lookupFilter;
-}
 
 #pragma mark - cameraMainView delegate
 
@@ -155,15 +145,23 @@
 
 // 点击拍照
 - (void)takePhoto {
-        [self.cameraManager capturePhotoAsImageProcessedUpToFilter:self.groupFilter withCompletionHandler:^(UIImage *processedImage, NSError *error) {
-            if (error != nil) {
-                NSLog(@"takePhotoError:(%@)",error);
-            } else {
-                if (processedImage != nil) {
-                    [self takePhotoFinished:processedImage];
-                }
+    if (self.currentFilterIndex == 0) {
+        [self capturePhotoWithFilter:self.cropFilter];
+    }else {
+        [self capturePhotoWithFilter:self.lookupFilter];
+    }
+}
+
+- (void)capturePhotoWithFilter:(GPUImageOutput<GPUImageInput> *)filer {
+    [self.cameraManager capturePhotoAsImageProcessedUpToFilter:filer withCompletionHandler:^(UIImage *processedImage, NSError *error) {
+        if (error != nil) {
+            NSLog(@"takePhotoError:(%@)",error);
+        } else {
+            if (processedImage != nil) {
+                [self takePhotoFinished:processedImage];
             }
-        }];
+        }
+    }];
 }
 
 #pragma mark - 保存照片到相册，显示到照相机，

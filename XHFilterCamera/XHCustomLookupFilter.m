@@ -1,20 +1,20 @@
 //
-//  GPUImageCustomLookupFilter.m
+//  XHCustomLookupFilter.m
 //  XHFilterCamera
 //
 //  Created by CraneTeng on 16/9/24.
 //  Copyright © 2016年 CraneTeng. All rights reserved.
 //
 
-#import "GPUImageCustomLookupFilter.h"
+#import "XHCustomLookupFilter.h"
 
-@interface GPUImageCustomLookupFilter()
+@interface XHCustomLookupFilter()
 
 @property (nonatomic,strong)GPUImagePicture *lookupImageSource;
 
 @end
 
-@implementation GPUImageCustomLookupFilter
+@implementation XHCustomLookupFilter
 
 - (instancetype)initWithLookupImageName:(NSString *)lookupImageName {
     self = [super init];

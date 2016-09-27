@@ -1,5 +1,5 @@
 //
-//  GPUImageCustomLookupFilter.h
+//  XHCustomLookupFilter.h
 //  XHFilterCamera
 //
 //  Created by CraneTeng on 16/9/24.
@@ -8,6 +8,6 @@
 
 #import <GPUImage/GPUImage.h>
 
-@interface GPUImageCustomLookupFilter : GPUImageFilterGroup
+@interface XHCustomLookupFilter : GPUImageFilterGroup
 - (instancetype)initWithLookupImageName:(NSString *)lookupImageName;
 @end

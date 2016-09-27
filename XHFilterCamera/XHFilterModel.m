@@ -1,22 +1,22 @@
 //
-//  FilterModel.m
+//  XHFilterModel.m
 //  XHFilterCamera
 //
 //  Created by CraneTeng on 16/9/24.
 //  Copyright © 2016年 CraneTeng. All rights reserved.
 //
 
-#import "FilterModel.h"
-#import "FilterItem.h"
-#import "common.h"
+#import "XHFilterModel.h"
+#import "XHFilterItem.h"
+#import "XHFilterCommon.h"
 
-@interface FilterModel()
+@interface XHFilterModel()
 
 
 
 @end
 
-@implementation FilterModel
+@implementation XHFilterModel
 
 
 - (NSMutableArray *)filterList {
@@ -83,7 +83,7 @@ static id instance;
     // 无用了，但去除会报警告，找不到图片
     NSString *imageStr = @"filter0";
     for (int i = 0; i < filterTitleArray.count; i++) {
-        FilterItem *item = [[FilterItem alloc]initWithCategory:kFilterStartTag + i title:filterTitleArray[i] imageTitle:imageStr lookupImageName:lookupNameArray[i]];
+        XHFilterItem *item = [[XHFilterItem alloc]initWithCategory:kFilterStartTag + i title:filterTitleArray[i] imageTitle:imageStr lookupImageName:lookupNameArray[i]];
         [self.filterList addObject:item];
     }
 }

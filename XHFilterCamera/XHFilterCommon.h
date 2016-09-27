@@ -1,5 +1,5 @@
 //
-//  common.h
+//  XHFilterCommon.h
 //  XHFilterCamera
 //
 //  Created by CraneTeng on 16/9/24.
@@ -9,7 +9,7 @@
 #ifndef common_h
 #define common_h
 
-//camera filter
+//camera filter name
 #define kFilterNone @"原图"
 #define kFilterZiRan @"自然"
 #define kFilterTianMi @"甜美"

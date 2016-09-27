@@ -7,7 +7,7 @@
 //
 
 #import "XHCameraFilterCollectionCell.h"
-#import "common.h"
+#import "XHFilterCommon.h"
 
 @interface XHCameraFilterCollectionCell()
 
